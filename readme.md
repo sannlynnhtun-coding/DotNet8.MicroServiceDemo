@@ -10,3 +10,7 @@ create table Tbl_Blog
 go
 
 ```
+
+```
+docker-compose -f docker-compose.yml up 
+```

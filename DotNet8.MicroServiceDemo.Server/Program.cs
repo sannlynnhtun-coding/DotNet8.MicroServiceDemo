@@ -25,7 +25,7 @@ builder.Services.AddMassTransit(x =>
     x.UsingRabbitMq((context, configure) =>
     {
         var rabbitMqSettings = builder.Configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
-        configure.Host(rabbitMqSettings.Host);
+        configure.Host(rabbitMqSettings!.Host);
         configure.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter("Server", false));
         configure.UseMessageRetry(retryConfigurator =>
         {
